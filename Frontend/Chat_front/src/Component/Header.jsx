@@ -38,8 +38,8 @@ export default function Header() {
                             <li><button className="btn btn-info text-white m-2 " onClick={() => (navigate('/allchat'))}>All Chats</button></li>
                             <li><button className="btn btn-info text-white m-2" onClick={() => (navigate('/addpost'))}>Add Post</button></li>
                             <li><button className="btn btn-error text-white m-2" onClick={() => (handlelogout())}>Logout</button></li>
+                            <li><button className="btn btn-error text-white m-2" onClick={() => (navigate('/allreq'))}>All Follow Request</button></li>
                             </>}
-                           
                     </ul>
                 </div>
             </div>

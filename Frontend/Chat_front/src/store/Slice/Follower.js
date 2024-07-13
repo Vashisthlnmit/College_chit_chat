@@ -7,9 +7,7 @@ export const sendrequest=createAsyncThunk('/sendfollow',async(data)=>{
      const response=axios.post(`http://localhost:5600/api/follow/sendfollow/${data}`,data,{withCredentials:true})
      toast.promise(response,{
         loading:"wait sending the follow request",
-        success: (data)=>{
-            toast(data.data.Message)
-        },
+        success: "request sent successfully",
         error:"you have already followed him"
      })
      const resp=await response;
@@ -27,9 +25,7 @@ export const Acceptrequest=createAsyncThunk('/acceptfollow',async(data)=>{
      const response=axios.post(`http://localhost:5600/api/follow/accept/${data}`,data,{withCredentials:true})
      toast.promise(response,{
         loading:"wait accepting the follow request",
-        success: (data)=>{
-            toast(data.data.Message)
-        },
+        success: "",
         error:"failed to accept the request"
      })
      const resp=await response;
@@ -47,9 +43,7 @@ export const unfollowrequest=createAsyncThunk('/unfollow',async(data)=>{
      const response=axios.post(`http://localhost:5600/api/follow/unfollow`,data)
      toast.promise(response,{
         loading:"wait sending the follow request",
-        success: (data)=>{
-            toast(data.data.Message)
-        },
+        success: "",
         error:"failed to send the request"
      })
      const resp=await response;
@@ -66,9 +60,7 @@ export const getallfollower=createAsyncThunk('/acceptfollow',async(data)=>{
      const response=axios.get(`http://localhost:5600/api/follow/follower/${data.id}`,{withCredentials:true})
      toast.promise(response,{
         loading:"wait getting all follower",
-        success: (data)=>{
-            toast(data.data.Message)
-        },
+        success: "",
         error:"failed to fetch follower"
      })
      const resp=await response;
@@ -86,9 +78,7 @@ export const getallfollowing=createAsyncThunk('/acceptfollow',async(data)=>{
      const response=axios.get(`http://localhost:5600/api/follow/following/${data.id}`,{withCredentials:true})
      toast.promise(response,{
         loading:"wait getting all following",
-        success: (data)=>{
-            toast(data.data.Message)
-        },
+        success: "",
         error:"failed to fetch following"
      })
      const resp=await response;
@@ -105,9 +95,7 @@ export const noofallfollower=createAsyncThunk('/nofollower',async(data)=>{
      const response=axios.get(`http://localhost:5600/api/follow/nofollow/${data.id}`,{withCredentials:true})
      toast.promise(response,{
         loading:"wait getting all following",
-        success: (data)=>{
-            toast(data.data.Message)
-        },
+        success: "",
         error:"failed to fetch following"
      })
      const resp=await response;
@@ -124,9 +112,7 @@ export const noofallfollowing=createAsyncThunk('/nofollower',async(data)=>{
      const response=axios.get(`http://localhost:5600/api/follow/noffolowing/${data.id}`,{withCredentials:true})
      toast.promise(response,{
         loading:"wait getting all following",
-        success: (data)=>{
-            toast(data.data.Message)
-        },
+        success: "",
         error:"failed to fetch following"
      })
      const resp=await response;
@@ -143,9 +129,7 @@ export const getallfollowrequest=createAsyncThunk('/getallfollowreq',async()=>{
      const response=axios.get(`http://localhost:5600/api/follow/getallfollowreq`,{withCredentials:true})
      toast.promise(response,{
         loading:"wait getting all pending request",
-        success: (data)=>{
-            toast(data.data.Message)
-        },
+        success:"",
         error:"failed to fetch following"
      })
      const resp=await response;

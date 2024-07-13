@@ -11,9 +11,7 @@ export const addpost=createAsyncThunk('/addpost',async(data)=>{
      const response=axios.post('http://localhost:5600/api/post/addpost',form,{withCredentials:true})
      toast.promise(response,{
         loading:"wait while creating the post",
-        success: (data)=>{
-            toast(data.data.Message)
-        },
+        success: "post added sucessfully",
         error:"failed to create post "
      })
      const resp=await response;
@@ -31,9 +29,7 @@ export const noofpostbyuser=createAsyncThunk('/noofpostbyuser',async(data)=>{
      const response=axios.get(`http://localhost:5600/api/post/noofpostbyuser/${data.id}`,{withCredentials:true})
      toast.promise(response,{
         loading:"wait fetching the no of post by you",
-        success: (data)=>{
-            toast(data.data.Message)
-        },
+        success: "",
         error:"failed to fetch post no"
      })
      const resp=await response;
@@ -50,9 +46,7 @@ export const allpostbyuser=createAsyncThunk('/allpostbyuser',async(data)=>{
      const response=axios.get(`http://localhost:5600/api/post/allpostbyuser/${data.id}`,{withCredentials:true})
      toast.promise(response,{
         loading:"wait fetching all post ",
-        success: (data)=>{
-            toast(data.data.Message)
-        },
+        success: "all post fetched successfully",
         error:"failed to fetch all the post"
      })
      const resp=await response;
@@ -70,9 +64,7 @@ export const deletepost=createAsyncThunk('/deletepost',async(data)=>{
      const response=axios.delete(`http://localhost:5600/api/post/deletepost/${data.postid}`,{withCredentials:true})
      toast.promise(response,{
         loading:"wait while deleting the post",
-        success: (data)=>{
-            toast(data.data.Message)
-        },
+        success: "post deleted successfully",
         error:"failed to delete post"
      })
      const resp=await response;

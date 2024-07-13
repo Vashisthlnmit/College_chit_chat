@@ -23,20 +23,22 @@ export default function Allfollowreq() {
     }, [])
     return (
         <>
-            <h1 className="font-bold text-2xl">Follow request</h1>
-            <div className="flex flex-wrap flex-row justify-center">
-                <FiUserPlus size={200} />
+            <div className="min-h-screen bg-white">
+                <h1 className="font-bold text-2xl">Follow request</h1>
+                <div className="flex flex-wrap flex-row justify-center">
+                    <FiUserPlus size={200} />
+                </div>
+                {arrofreq.length > 0 ? (
+                    arrofreq.map((obj) => (
+                        <div className="flex flex-wrap flex-row justify-center">
+                            <h1>{obj.sender[0].username}</h1>
+                            <button className="btn btn-outline btn-info" onClick={() => (accept(obj._id))}>Accept</button>
+                        </div>
+                    ))
+                ) : (
+                    <h1 className="font-bold text-xl">No all request available till now</h1>
+                )}
             </div>
-            {arrofreq.length > 0 ? (
-                arrofreq.map((obj) => (
-                    <div className="flex flex-wrap flex-row justify-center">
-                        <h1>{obj.sender[0].username}</h1>
-                        <button className="btn btn-outline btn-info" onClick={() => (accept(obj._id))}>Accept</button>
-                    </div>
-                ))
-            ) : (
-                <h1 className="font-bold text-xl">No all request available till now</h1>
-            )}
         </>
     )
 }

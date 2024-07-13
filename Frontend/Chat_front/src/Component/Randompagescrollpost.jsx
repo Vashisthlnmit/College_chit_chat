@@ -5,9 +5,11 @@ import { useDispatch } from "react-redux";
 import { randompostonmainpage } from "../store/Slice/Authentication";
 import { allcommentonpost } from "../store/Slice/CommentSlice";
 import Comments from "./AllComments";
+import { useNavigate } from "react-router";
 
 export default function PageScrollpost() {
     const dispatch = useDispatch();
+    const navigate=useNavigate();
     const [post, setpost] = useState([]);
     const [comments, setcomments] = useState([]);
     const [selectedPostId, setSelectedPostId] = useState(null);
@@ -43,7 +45,9 @@ export default function PageScrollpost() {
                                         <div className="card-body">
                                             <h2 className="card-title">
                                                 {imag?.title}
-                                                <div className="badge badge-secondary">{content?.friendDetails?.username}</div>
+                                                {/* //<button onClick={()=>(navigate('/profile',{state:{userid:content?.friendDetails?._id, name:content?.friendDetails?.username}}))}>{content?.friendDetails?.username}</button> */}
+                                                {/* <button onClick={()=>navigate('/profile',{state:{userid:content?.friendDetails?._id, name:content?.friendDetails?.username}})}>{content?.friendDetails?.username}</button> */}
+                                                <div className="badge badge-secondary" onClick={()=>navigate('/profile',{state:{userid:content?.friendDetails?._id, name:content?.friendDetails?.username}})}>{content?.friendDetails?.username}</div>
                                             </h2>
                                             <p>{imag?.Description}</p>
                                         </div>

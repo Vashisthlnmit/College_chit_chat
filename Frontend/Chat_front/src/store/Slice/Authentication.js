@@ -11,9 +11,7 @@ export const createaccount=createAsyncThunk('/signup',async(data)=>{
      const response=axios.post('http://localhost:5600/api/signup',data,{withCredentials:true})
      toast.promise(response,{
         loading:"wait creating the account",
-        success: (data)=>{
-            toast(data.data.Message)
-        },
+        success: "your account has created successfully otp send on your email please verify it",
         error:"failed to create account"
      })
      const resp=await response;
@@ -31,9 +29,7 @@ export const authin=createAsyncThunk('/signin',async(data)=>{
      const response=axios.post('http://localhost:5600/api/signin',data,{withCredentials:true})
      toast.promise(response,{
         loading:"wait signing the account",
-        success: (data)=>{
-            toast(data.data.Message)
-        },
+        success: "user signed successfully",
         error:"failed to signin the account"
      })
      const resp=await response;
@@ -49,9 +45,7 @@ export  const Verify=createAsyncThunk('/verify',async(data)=>{
      const response=axios.post('http://localhost:5600/api/verify',data,{withCredentials:true})
      toast.promise(response,{
         loading:"wait while verify  the account",
-        success: (data)=>{
-            toast(data.data.Message)
-        },
+        success: "account verified successfully",
         error:"failed to verify the account"
      })
      const resp=await response;
@@ -67,9 +61,7 @@ export const Logout=createAsyncThunk('/logout',async(data)=>{
      const response=axios.post('http://localhost:5600/api/Logout',data,{withCredentials:true})
      toast.promise(response,{
         loading:"wait loging out ",
-        success: (data)=>{
-            toast(data.data.Message)
-        },
+        success: "user logout successfully",
         error:"failed to logout the account"
      })
      const resp=await response;
@@ -81,14 +73,12 @@ export const Logout=createAsyncThunk('/logout',async(data)=>{
     }
 })
 export const changeaccount=createAsyncThunk('/acc',async(data)=>{
-    console.log(data);
+    //console.log(data);
     try{
      const response=axios.post('http://localhost:5600/api/Changeacc',data,{withCredentials:true})
      toast.promise(response,{
         loading:"wait changing account ",
-        success: (data)=>{
-            toast(data.data.Message)
-        },
+        success: "account type changed successfully",
         error:"failed to update account type"
      })
      const resp=await response;
@@ -104,9 +94,7 @@ export const getuserinfo=createAsyncThunk('/acc',async(data)=>{
      const response=axios.get(`http://localhost:5600/api/infouser/${data.id}`,{withCredentials:true})
      toast.promise(response,{
         loading:"wait changing account ",
-        success: (data)=>{
-            toast(data.data.Message)
-        },
+        success: "",
         error:"failed to update account type"
      })
      const resp=await response;
@@ -122,8 +110,8 @@ export const searchbar=createAsyncThunk('/searc',async(data)=>{
     try{
         const response=axios.post('http://localhost:5600/api/search',data)
         toast.promise(response,{
-           loading:"wait changing account ",
-           success:"your account has been ",
+           loading:"wait loading accounts ",
+           success:"",
            error:"failed to update account type"
         })
         const resp=await response;
@@ -139,7 +127,7 @@ export const forgotpassword=createAsyncThunk('/forgotpass',async(data)=>{
     try{
         const response=axios.post('http://localhost:5600/api/forgotpass',data,{withCredentials:true})
         toast.promise(response,{
-           loading:"wait sending the request  ",
+           loading:"wait sending the forgot password request  ",
            success:"your request has been sent ",
            error:"failed to send the request"
         })
@@ -174,8 +162,8 @@ export const randompostonmainpage=createAsyncThunk('/random',async()=>{
         const response=axios.get('http://localhost:5600/api/post/allpost',{withCredentials:true})
         toast.promise(response,{
            loading:"wait for getting the post",
-           success:"successfully fetched all the post",
-           error:"failed to fetch post"
+           success:"",
+           error:""
         })
         const resp=await response;
         return resp;

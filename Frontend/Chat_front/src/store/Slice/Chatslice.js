@@ -7,9 +7,7 @@ export const creategrp = createAsyncThunk('/creategrp', async (data) => {
         const response = axios.post('http://localhost:5600/api/chat/creategrpchat', data, { withCredentials: true })
         toast.promise(response, {
             loading: "please wait while creating group chat",
-            success: (data)=>{
-                toast(data.data.Message)
-            },
+            success: "created group chat",
             error: "there some error while creating grp chat"
         })
         const resp = await response;
@@ -28,9 +26,7 @@ export const createonetoone = createAsyncThunk('/createone', async (data) => {
         const response = axios.post('http://localhost:5600/api/chat/createonechat', data, { withCredentials: true })
         toast.promise(response, {
             loading: "please wait while creating one to one chat",
-            success: (data)=>{
-                toast(data.data.Message)
-            },
+            success: "created one to one chat",
             error: "there some error while creating one to one chat"
         })
         const resp=await response;
@@ -46,9 +42,7 @@ export const Addparticipants = createAsyncThunk('/addparticpate', (data) => {
     const response = axios.post('http://localhost:5600/api/chat/addparti', data, { withCredentials: true })
     toast.promise(response, {
         loading: "please wait while creating one to one chat",
-        success: (data)=>{
-            toast(data.data.Message)
-        },
+        success: "Participants add successfully",
         error: "there some error while creating one to one chat"
     })
 })
@@ -57,9 +51,7 @@ export const removeparticipants = createAsyncThunk('/removeparticpate', async (d
         const response = axios.post('http://localhost:5600/api/chat/removeparti', data, { withCredentials: true })
         toast.promise(response, {
             loading: "please wait while creating one to one chat",
-            success: (data)=>{
-                toast(data.data.Message)
-            },
+            success: "participants removed successfully",
             error: "there some error while creating one to one chat"
         })
     }
@@ -73,9 +65,7 @@ export const delchat = createAsyncThunk('/removeparticpate', async (data) => {
         const response = axios.delete(`http://localhost:5600/api/chat/delechat/${data.chatid}`,{withCredentials:true})
         toast.promise(response, {
             loading: "please wait while creating one to one chat",
-            success: (data)=>{
-                toast(data.data.Message)
-            },
+            success: "chat deleted successfully",
             error: "there some error while creating one to one chat"
         })
     }
@@ -89,9 +79,7 @@ export const rename = createAsyncThunk('/removeparticpate', async (data) => {
         const response = axios.patch('http://localhost:5600/api/chat/renamechat', data, { withCredentials: true })
         toast.promise(response, {
             loading: "please wait while creating one to one chat",
-            success: (data)=>{
-                toast(data.data.Message)
-            },
+            success: "chat renamed successfully",
             error: "there some error while creating one to one chat"
         })
         const resp=await response;
@@ -107,9 +95,7 @@ export const avaiuser = createAsyncThunk('/removeparticpate', async (data) => {
         const response = axios.get(`http://localhost:5600/api/chat/avaiuser/${data.chatid}`,{ withCredentials: true })
         toast.promise(response, {
             loading: "please wait while creating one to one chat",
-            success: (data)=>{
-                toast(data.data.Message)
-            },
+            success: "",
             error: "there some error while creating one to one chat"
         })
         const resp=await response;
@@ -125,9 +111,7 @@ export const getallchat = createAsyncThunk('/removeparticpate', async () => {
         const response = axios.get('http://localhost:5600/api/chat/getallchat', { withCredentials: true })
         toast.promise(response, {
             loading: "please wait while creating one to one chat",
-            success: (data)=>{
-                toast(data.data.Message)
-            },
+            success: "all chat fetched successfully",
             error: "there some error while creating one to one chat"
         })
         const resp=await response;
@@ -144,9 +128,7 @@ export const leavechatgroup = createAsyncThunk('/removeparticpate', async (data)
         const response = axios.post('http://localhost:5600/api/chat/leave', data, { withCredentials: true })
         toast.promise(response, {
             loading: "please wait while creating one to one chat",
-            success: (data)=>{
-                toast(data.data.Message)
-            },
+            success: "chat grp left successfully",
             error: "there some error while leaving group"
         })
         const resp=await response;

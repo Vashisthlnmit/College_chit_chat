@@ -7,9 +7,7 @@ export const addcomment=createAsyncThunk('/addcomment',async(data)=>{
      const response=axios.post('http://localhost:5600/api/comment/add',data,{withCredentials:true})
      toast.promise(response,{
         loading:"wait signing the account",
-        success: (data)=>{
-            toast(data.data.Message)
-        },
+        success: "comment added successfully",
         error:"failed to signin the account"
      })
      const resp=await response;
@@ -26,9 +24,7 @@ export const allcommentonpost=createAsyncThunk('/allcomment',async(data)=>{
      const response=axios.get(`http://localhost:5600/api/comment/allcom/${data.postid}`,{withCredentials:true})
      toast.promise(response,{
         loading:"wait while fetching all the comment",
-        success: (data)=>{
-            toast(data.data.Message)
-        },
+        success: "",
         error:"failed to signin the account"
      })
      const resp=await response;
@@ -45,9 +41,7 @@ export const deletecomment=createAsyncThunk('/deletecomment',async(data)=>{
      const response=axios.delete(`http://localhost:5600/api/comment/del/${data.postid }`,data,{withCredentials:true})
      toast.promise(response,{
         loading:"wait while deleting the account",
-        success: (data)=>{
-            toast(data.data.Message)
-        },
+        success: "comment deleted successfully",
         error:"failed to signin the account"
      })
      const resp=await response;
@@ -64,9 +58,7 @@ export const nocommentonpost=createAsyncThunk('/nocomment',async(data)=>{
      const response=axios.get(`http://localhost:5600/api/comment/nocom/${data.postid}`,data,{withCredentials:true})
      toast.promise(response,{
         loading:"wait while fetching the no of comment",
-        success: (data)=>{
-            toast(data.data.Message)
-        },
+        success: "",
         error:"failed to signin the account"
      })
      const resp=await response;
