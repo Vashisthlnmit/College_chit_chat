@@ -95,7 +95,7 @@ Userschema.methods.generateaccesstoken=function(){
         _id:this._id,
         username:this.username,
         email:this.email,
-        
+        College_Name:this.College_Name,
 
     },process.env.JWT_SECRET,{expiresIn:process.env.JWT_CODEEXPIRY})
     return accesstoken;
